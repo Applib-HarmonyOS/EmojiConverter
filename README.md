@@ -6,8 +6,8 @@ This is a HMOS library used to convert text to Emoji's from a textfield or from 
 The code in this repository was inspired from [AnkitKiet/EmojiConverter - Release 1.15](https://github.com/AnkitKiet/EmojiConverter). 
 We are very thankful to AnkitKiet. 
 
-## Feature
-This library converts text to it's corresponding emoji .
+## Demo
+EmojiConverter library converts text to it's corresponding emoji .
 
 ![finaldemo](https://user-images.githubusercontent.com/60657039/129444769-961ac72c-85b2-41b5-b45d-aadd904349ce.gif)
 
@@ -70,18 +70,19 @@ textField.addTextObserver((s, i, i1, i2) -> {
 ```
 
 ## Future works
-Since the retrofit library is unavailable in hmos , emojis.json file was parsed from a local directory using zsonArray and zsonObject .
+Since the retrofit library is unavailable in hmos , emojis.json file 
+was parsed from a local directory using zsonArray and zsonObject . 
 Once retrofit library is available in hmos , emoji.json can be parsed using it.
 
 ## License
- Copyright (C) 2020-21 Application Library Engineering Group
-
+ Copyright 2017 Ankit Maurya
+ 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.

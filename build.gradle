@@ -2,7 +2,6 @@
 apply plugin: 'com.huawei.ohos.app'
 apply plugin: 'org.sonarqube'
 apply plugin: 'checkstyle'
-
 	
 buildscript {
     repositories {
@@ -20,7 +19,6 @@ buildscript {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3"
     }
 }
-
 
 ohos {
     compileSdkVersion 5
@@ -51,6 +49,7 @@ allprojects {
         classpath = files()
     }
 }
+
 checkstyle {
     toolVersion "8.43"
 }

@@ -22,7 +22,11 @@ import ohos.app.Context;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class EmojiConverterTest {
     EmojiConverter emojiConverter;
@@ -34,12 +38,11 @@ public class EmojiConverterTest {
         emojiConverter = new EmojiConverter(context);
     }
 
+
     @Test
     public void testProcessStringIsNull() {
-        ArrayList<String> testList = new ArrayList<>();
-        testList=null;
-        String output=emojiConverter.processString(testList);
-        assertEquals( null,output);
+        String output=emojiConverter.processString(null);
+        assertNull( output);
     }
 
     @Test
@@ -66,10 +69,11 @@ public class EmojiConverterTest {
         assertEquals("👋 👊",output);
     }
 
+
     @Test
     public void testConvertToEmojiIsNull() {
         String output=emojiConverter.convertToEmoji(null);
-        assertEquals( null,output);
+        assertNull( output);
     }
 
     @Test
@@ -89,4 +93,42 @@ public class EmojiConverterTest {
         String output=emojiConverter.convertToEmoji("hello attack");
         assertEquals("👋 👊",output);
     }
+
+
+    @Test
+    public void testConvertUserKeywordsIsNull() {
+        List<String> testList=emojiConverter.convertUserKeywords(null);
+        assertEquals( testList,Collections.emptyList());
+    }
+
+    @Test
+    public void testConvertUserKeywordsIsEmpty() {
+        List<String> input=new ArrayList<>();
+        assertEquals( input,Collections.emptyList());
+    }
+
+    @Test
+    public void testConvertUserKeywordsWithSingleInout() {
+        List<String> input=new ArrayList<>();
+        input.add(sampleText);
+        List<String> output=emojiConverter.convertUserKeywords(input);
+        List<String> exp=new ArrayList<>();
+        exp.add("👋");
+        assertEquals( exp,output);
+    }
+
+    @Test
+    public void testConvertUserKeywordsWithMultipleInout() {
+        List<String> input=new ArrayList<>();
+        input.add(sampleText);
+        input.add("attack");
+        input.add("hi");
+        List<String> output=emojiConverter.convertUserKeywords(input);
+        List<String> exp=new ArrayList<>();
+        exp.add("👋");
+        exp.add("👊");
+        exp.add("hi");
+        assertEquals( exp,output);
+    }
+
 }
