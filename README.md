@@ -18,7 +18,7 @@ EmojiConverter library converts text to it's corresponding emoji .
 1. For using EmojiConverter module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
 ```
 	dependencies {
-		implementation project(':emojiconverterlibrary')
+		implementation project(':emojiconverter')
         	implementation fileTree(dir: 'libs', include: ['*.har'])
         	testImplementation 'junit:junit:4.13'
 	}
@@ -31,6 +31,14 @@ EmojiConverter library converts text to it's corresponding emoji .
 	}
 
 ```
+3. For using EmojiConverter from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+``` 
+    dependencies {
+	    implementation 'dev.applibgroup:emojiconverter:1.0.0'
+	    testCompile 'junit:junit:4.13'
+    }
+```
+
 
 ## Usage
 Declare in XML (see xml attributes below for customization):
